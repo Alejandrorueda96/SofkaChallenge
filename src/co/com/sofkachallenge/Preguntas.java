@@ -10,11 +10,11 @@ public class Preguntas {
 	
 	//Matriz que contiene 25 preguntas, la dificultad aumenta al aumentar las filas 
 	String[][] matrizPreguntas = {
-			{"36+97", "94+35", "97+96", "87+72", "12+67"},
-			{"97-42", "65-53", "93-72", "64-32", "76-52"},
-			{"27*42", "73*65", "28*76", "67*58", "38*57"},
-			{"244/4", "4026/366", "354/2", "162/3", "2610/58"},
-			{"(-5)*7 - 9*(-4) ", "(24-89+18) - (-91+24)", "440 - [30 + 6*(19 - 12)]", "5 + [6-2-(1-8)-3 + 6] - 5", "(2 * 4 + 12) * (6 - 4)"}
+			{"36+97", "94+35", "97+96", "87+72", "12+67"}, //Preguntas de nivel 1 (Suma)
+			{"97-42", "65-53", "93-72", "64-32", "76-52"}, //Preguntas de nivel 2 (Resta)
+			{"27*42", "73*65", "28*76", "67*58", "38*57"}, //Preguntas de nivel 3 (Multiplicacion)
+			{"244/4", "4026/366", "354/2", "162/3", "2610/58"}, //Preguntas de nivel 4 (Division)
+			{"(-5)*7 - 9*(-4) ", "(24-89+18) - (-91+24)", "440 - [30 + 6*(19 - 12)]", "5 + [6-2-(1-8)-3 + 6] - 5", "(2 * 4 + 12) * (6 - 4)"} //Preguntas de nivel 5 (operaciones combinadas)
 	};
 	//Matriz que contiene las posibles respuestas y la respuesta correcta en la ultima columna de cada fila
 	int[][] matrizRespuestas = {
@@ -86,6 +86,7 @@ public class Preguntas {
 		return enunciado;
 	}
 	
+	//Mostrar en la consola las posibles respuestas
 	public void mostrarRespuestas() {
 		String [] opciones = {"a. ","b. ","c. ","d. "};
 		for(int i = 0;i < 4;i++) {
@@ -93,6 +94,7 @@ public class Preguntas {
 		}
 	}
 	
+	//Metodo para validar que la respuesta ingresada por el jugador es correcta o incorrecta, tambien permite terminar el concurso
 	public String validarRespuesta() {
 		String validacion = "";
 		if(getRespuesta().equals("a")) {
