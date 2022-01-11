@@ -5,7 +5,7 @@ public class Preguntas {
 	private int dificultad; //Variable para almacenar la dificultad 
 	private int ronda = 1; //Variable para almacenar la ronda
 	private int indice; //Variable para almacenar el indice aleatorio
-	private int respuesta; //Variable para almacenar la respuesta ingresada por el usuario
+	private String respuesta; //Variable para almacenar la respuesta ingresada por el usuario
 	Random random = new Random(); //Clase para generar un numero aleatorio 
 	
 	//Matriz que contiene 25 preguntas, la dificultad aumenta al aumentar las filas 
@@ -67,10 +67,10 @@ public class Preguntas {
 	public void setIndice(int indice) {
 		this.indice = indice;
 	}
-	public int getRespuesta() {
+	public String getRespuesta() {
 		return respuesta;
 	}
-	public void setRespuesta(int respuesta) {
+	public void setRespuesta(String respuesta) {
 		this.respuesta = respuesta;
 	}
 	
@@ -92,12 +92,46 @@ public class Preguntas {
 		}
 	}
 	
-	public boolean validarRespuesta() {
-		if(getRespuesta() == matrizRespuestas[indice + (getDificultad()*5)][4]) {
-			return true;
+	public String validarRespuesta() {
+		String validacion = "";
+		if(getRespuesta().equals("a")) {
+			if(matrizRespuestas[indice + (getDificultad()*5)][0] == matrizRespuestas[indice + (getDificultad()*5)][4]) {
+				validacion = "correcto";
+			}
+			else {
+				validacion = "falso";
+			}
 		}
-		else {
-			return false;
+			
+		else if(getRespuesta().equals("b")) {
+			if(matrizRespuestas[indice + (getDificultad()*5)][1] == matrizRespuestas[indice + (getDificultad()*5)][4]) {
+				validacion = "correcto";
+			}
+			else {
+				validacion = "falso";
+			}
 		}
+		
+		else if(getRespuesta().equals("c")) {
+			if(matrizRespuestas[indice + (getDificultad()*5)][2] == matrizRespuestas[indice + (getDificultad()*5)][4]) {
+				validacion = "correcto";
+			}
+			else {
+				validacion = "falso";
+			}
+		}
+		
+		else if(getRespuesta().equals("d")) {
+			if(matrizRespuestas[indice + (getDificultad()*5)][3] == matrizRespuestas[indice + (getDificultad()*5)][4]) {
+				validacion = "correcto";
+			}
+			else {
+				validacion = "falso";
+			}
+		}
+		
+	
+		
+		return validacion;
 	}
 }

@@ -23,8 +23,8 @@ public class Concurso {
 				System.out.println(preguntas.preguntaSeleccionada());
 				preguntas.mostrarRespuestas();
 				System.out.print("Ingrese su respuesta:");
-				preguntas.setRespuesta(Integer.parseInt(jugadorInput.nextLine()));				
-				if (preguntas.validarRespuesta() == true) {
+				preguntas.setRespuesta(jugadorInput.nextLine());				
+				if (preguntas.validarRespuesta().equals("correcto")) {
 					
 					if(preguntas.getRonda()<=4) {
 						System.out.println("Respuesta correcta, avanza a la siguiente ronda");
@@ -39,7 +39,8 @@ public class Concurso {
 						break;
 					}
 				}
-				else {
+				
+				else if(preguntas.validarRespuesta().equals("falso")) {
 					System.out.println("Respuesta incorrecta juego terminado");
 					break;
 				}
