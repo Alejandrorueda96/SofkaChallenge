@@ -14,11 +14,24 @@ public class Concurso {
 		//El jugador puede ingresar su nombre por medio de la consola 
 		System.out.print("Por favor ingrese su nombre de jugador \nNombre:");
 		jugador.setNombre(jugadorInput.nextLine()); 
-		
+		//Mensaje de inicio 
 		System.out.println("Muy bien " + jugador.getNombre() + " el concurso comienza ahora");
 		
-		System.out.println(preguntas.preguntaSeleccionada());
-		preguntas.mostrarRespuestas();
+			while(true) {
+				System.out.println(preguntas.preguntaSeleccionada());
+				preguntas.mostrarRespuestas();
+				System.out.print("Ingrese su respuesta:");
+				preguntas.setRespuesta(Integer.parseInt(jugadorInput.nextLine()));
+				if (preguntas.validarRespuesta() == true) {
+					System.out.println("Respuesta correcta, avanza a la siguiente ronda");
+					
+				}
+				else {
+					System.out.println("Respuesta incorrecta juego terminado");
+					break;
+				}
+
+			}
 		
 	}
 

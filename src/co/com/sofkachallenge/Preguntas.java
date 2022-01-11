@@ -92,4 +92,12 @@ public class Preguntas {
 		}
 	}
 	
+	public boolean validarRespuesta() {
+		if(getRespuesta() == matrizRespuestas[indice + (getDificultad()*5)][4]) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 }
