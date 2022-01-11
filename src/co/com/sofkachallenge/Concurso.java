@@ -5,14 +5,14 @@ public class Concurso {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner jugadorInput = new Scanner(System.in); //Clase para obtener la entrada del usuario
-		int[] premios = {100, 200, 300, 400, 500};
+		int[] premios = {100, 200, 300, 400, 500}; // Premios para cada ronda del concurso
 		//Crear un nuevo jugador
 		Jugador jugador = new Jugador();
 		Preguntas preguntas = new Preguntas();
 		
 		//Bienvenida del programa
 		System.out.print("Bienvenid@ al concurso\n");
-		//El jugador puede ingresar su nombre por medio de la consola 
+		//El jugador debe ingresar su nombre por medio de la consola 
 		System.out.print("Por favor ingrese su nombre de jugador \nNombre:");
 		jugador.setNombre(jugadorInput.nextLine()); 
 		//Mensaje de inicio 
@@ -33,9 +33,9 @@ public class Concurso {
 						preguntas.setDificultad(preguntas.getDificultad() + 1);
 						System.out.println("premio " + jugador.getPremioAcumulado());
 					}
-					else {
+					else if(preguntas.getRonda() == 5) {
 						jugador.setPremioAcumulado(jugador.getPremioAcumulado()+premios[preguntas.getDificultad()]);
-						System.out.println("Felicitaciones su premio es de "  + jugador.getPremioAcumulado());
+						System.out.println("Felicitaciones " + jugador.getNombre() + " su premio es de "  + jugador.getPremioAcumulado());
 						break;
 					}
 				}
