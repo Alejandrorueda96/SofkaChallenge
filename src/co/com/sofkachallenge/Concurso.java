@@ -7,11 +7,14 @@ public class Concurso {
 		Scanner jugadorInput = new Scanner(System.in); //Clase para obtener la entrada del usuario
 		//Crear un nuevo jugador
 		Jugador jugador = new Jugador();
+		
+		//Bienvenida del programa
+		System.out.print("Bienvenid@ al concurso\n");
 		//El jugador puede ingresar su nombre por medio de la consola 
-		System.out.print("Nombre:");
+		System.out.print("Por favor ingrese su nombre de jugador \nNombre:");
 		jugador.setNombre(jugadorInput.nextLine()); 
 		
-		System.out.println(jugador.getNombre());
+		System.out.println("Muy bien " + jugador.getNombre() + " el concurso comienza ahora");
 		
 		
 		
