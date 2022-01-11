@@ -87,9 +87,9 @@ public class Preguntas {
 	}
 	
 	public void mostrarRespuestas() {
-		String [] opciones = {"a.","b.","c.","d."};
+		String [] opciones = {"a. ","b. ","c. ","d. "};
 		for(int i = 0;i < 4;i++) {
-			System.out.println(matrizRespuestas[indice + (getDificultad()*5)][i]);
+			System.out.println(opciones[i] + matrizRespuestas[indice + (getDificultad()*5)][i]);
 		}
 	}
 	
