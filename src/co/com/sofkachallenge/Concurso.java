@@ -24,7 +24,8 @@ public class Concurso {
 				preguntas.setRespuesta(Integer.parseInt(jugadorInput.nextLine()));
 				if (preguntas.validarRespuesta() == true) {
 					System.out.println("Respuesta correcta, avanza a la siguiente ronda");
-					
+					preguntas.setRonda(preguntas.getRonda() + 1);
+					preguntas.setDificultad(preguntas.getDificultad() + 1);
 				}
 				else {
 					System.out.println("Respuesta incorrecta juego terminado");
