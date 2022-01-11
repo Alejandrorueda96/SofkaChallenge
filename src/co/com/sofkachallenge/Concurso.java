@@ -19,11 +19,13 @@ public class Concurso {
 		System.out.println("Muy bien " + jugador.getNombre() + " el concurso comienza ahora");
 		
 			while(true) {
+				if(preguntas.getRonda()<=5) {
 				System.out.println(preguntas.preguntaSeleccionada());
 				preguntas.mostrarRespuestas();
 				System.out.print("Ingrese su respuesta:");
-				preguntas.setRespuesta(Integer.parseInt(jugadorInput.nextLine()));
+				preguntas.setRespuesta(Integer.parseInt(jugadorInput.nextLine()));				
 				if (preguntas.validarRespuesta() == true) {
+					
 					System.out.println("Respuesta correcta, avanza a la siguiente ronda");
 					jugador.setPremioAcumulado(jugador.getPremioAcumulado()+premios[preguntas.getDificultad()]);
 					preguntas.setRonda(preguntas.getRonda() + 1);
@@ -36,7 +38,10 @@ public class Concurso {
 				}
 
 			}
-		
+				else {
+					System.out.println("Ganador");
+					break;
+				}
 	}
-
+	}
 }
