@@ -7,6 +7,7 @@ public class Concurso {
 		Scanner jugadorInput = new Scanner(System.in); //Clase para obtener la entrada del usuario
 		//Crear un nuevo jugador
 		Jugador jugador = new Jugador();
+		Preguntas preguntas = new Preguntas();
 		
 		//Bienvenida del programa
 		System.out.print("Bienvenid@ al concurso\n");
@@ -16,7 +17,7 @@ public class Concurso {
 		
 		System.out.println("Muy bien " + jugador.getNombre() + " el concurso comienza ahora");
 		
-		
+		System.out.println(preguntas.preguntaSeleccionada());
 		
 	}
 

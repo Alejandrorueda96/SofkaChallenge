@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Preguntas {
 	private int dificultad; //Variable para almacenar la dificultad 
-	private int ronda; //Variable para almacenar la ronda
-	private int pregunta; //Variable para almacenar la pregunta escojida aleatoriamente
+	private int ronda = 1; //Variable para almacenar la ronda
+	private int indice; //Variable para almacenar el indice aleatorio
 	private int respuesta; //Variable para almacenar la respuesta ingresada por el usuario
 	Random random = new Random(); //Clase para generar un numero aleatorio 
 	
@@ -29,11 +29,11 @@ public class Preguntas {
 	public void setRonda(int ronda) {
 		this.ronda = ronda;
 	}
-	public int getPregunta() {
-		return pregunta;
+	public int getIndice() {
+		return indice;
 	}
-	public void setPregunta(int pregunta) {
-		this.pregunta = pregunta;
+	public void setIndice(int indice) {
+		this.indice = indice;
 	}
 	public int getRespuesta() {
 		return respuesta;
@@ -42,8 +42,14 @@ public class Preguntas {
 		this.respuesta = respuesta;
 	}
 	
-	//Metodo para escojer un numero aleatoria entre 0 y 4
+	//Metodo para escojer un numero aleatoria entre 0 y 4 y almacenarlo en indice
 	public void numeroAleatorio() {
-		this.pregunta = random.nextInt(5);
+		this.indice = random.nextInt(5);
+	}
+	
+	//Metodo que retorna una pregunta seleccionada aleatoriamente por el programa
+	public String preguntaSeleccionada() {
+		String enunciado = "Pregunta de nivel "  + Integer.toString(getRonda()) + "\nCual es el resultado de la siguiente operacion " + matrizPreguntas[getDificultad()][getIndice()];
+		return enunciado;
 	}
 }
