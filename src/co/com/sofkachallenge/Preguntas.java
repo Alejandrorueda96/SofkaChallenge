@@ -49,6 +49,7 @@ public class Preguntas {
 	
 	//Metodo que retorna una pregunta seleccionada aleatoriamente por el programa
 	public String preguntaSeleccionada() {
+		numeroAleatorio();
 		String enunciado = "Pregunta de nivel "  + Integer.toString(getRonda()) + "\nCual es el resultado de la siguiente operacion " + matrizPreguntas[getDificultad()][getIndice()];
 		return enunciado;
 	}
