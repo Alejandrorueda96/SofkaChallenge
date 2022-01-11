@@ -87,6 +87,7 @@ public class Preguntas {
 	}
 	
 	public void mostrarRespuestas() {
+		String [] opciones = {"a.","b.","c.","d."};
 		for(int i = 0;i < 4;i++) {
 			System.out.println(matrizRespuestas[indice + (getDificultad()*5)][i]);
 		}
@@ -130,6 +131,9 @@ public class Preguntas {
 			}
 		}
 		
+		else if(getRespuesta().equals("terminar")) {
+			validacion = "terminar";
+		}
 	
 		
 		return validacion;

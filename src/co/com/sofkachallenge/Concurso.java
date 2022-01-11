@@ -31,17 +31,23 @@ public class Concurso {
 						jugador.setPremioAcumulado(jugador.getPremioAcumulado()+premios[preguntas.getDificultad()]);
 						preguntas.setRonda(preguntas.getRonda() + 1);
 						preguntas.setDificultad(preguntas.getDificultad() + 1);
-						System.out.println("premio " + jugador.getPremioAcumulado());
+						
 					}
 					else if(preguntas.getRonda() == 5) {
 						jugador.setPremioAcumulado(jugador.getPremioAcumulado()+premios[preguntas.getDificultad()]);
-						System.out.println("Felicitaciones " + jugador.getNombre() + " su premio es de "  + jugador.getPremioAcumulado());
+						System.out.println("Felicitaciones" + jugador.getNombre() + " completó todas las rondas, su premio acumulado es de "  + jugador.getPremioAcumulado() + " puntos");
 						break;
 					}
 				}
 				
 				else if(preguntas.validarRespuesta().equals("falso")) {
-					System.out.println("Respuesta incorrecta juego terminado");
+					System.out.println("Respuesta incorrecta! juego terminado");
+					jugador.setPremioAcumulado(0);
+					break;
+				}
+				
+				else if(preguntas.validarRespuesta().equals("terminar")) {
+					System.out.println("Decidió terminar el juego antes de completar todas las rondas, su premio acumulado hasta el momento es de " + jugador.getPremioAcumulado() + " puntos." );
 					break;
 				}
 
