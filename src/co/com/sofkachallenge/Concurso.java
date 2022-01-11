@@ -25,8 +25,6 @@ public class Concurso {
 		Jugador jugador = new Jugador();
 		Preguntas preguntas = new Preguntas();
 		
-		//
-		ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream("jugadores.txt"));
 		//Bienvenida del programa
 		System.out.print("Bienvenid@ al concurso de matemáticas\n");
 		//El jugador debe ingresar su nombre por medio de la consola 
