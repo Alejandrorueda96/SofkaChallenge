@@ -1,4 +1,8 @@
 package co.com.sofkachallenge;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 /**
  * Programa desarrollado para modelar un concurso de preguntas y respuestas de matematicas para Sofka
@@ -6,14 +10,14 @@ import java.util.Scanner;
  * Las dificultades consisten en 0 -> sumas , 1 -> restas, 2 -> multiplicaciones, 3 -> divisiones y 4 -> operaciones combinadas
  * El concurso termina cuando el jugador completa las 5 rondas obteniendo los puntos maximos de 1500
  * Si el jugador responde erroneamente, el juego termina y no obtiene puntos
- * El jugador puede terminar el juego escribiendo "terminar" en la consola, obteniendo los puntos acumulados hasta el momento.
+ * El jugador puede terminar el juego escribiendo "terminar" en Ingrese su respuesta en la consola, obteniendo los puntos acumulados hasta el momento.
  * @author Alejandro Rueda
  *
  */
 
 public class Concurso {
-
-	public static void main(String[] args) {
+	
+	public static void main(String[] args) throws FileNotFoundException, IOException{
 		// TODO Auto-generated method stub
 		Scanner jugadorInput = new Scanner(System.in); //Clase para obtener la entrada del usuario
 		int[] premios = {100, 200, 300, 400, 500}; // Premios para cada ronda del concurso
@@ -21,6 +25,8 @@ public class Concurso {
 		Jugador jugador = new Jugador();
 		Preguntas preguntas = new Preguntas();
 		
+		//
+		ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream("jugadores.txt"));
 		//Bienvenida del programa
 		System.out.print("Bienvenid@ al concurso de matemáticas\n");
 		//El jugador debe ingresar su nombre por medio de la consola 
@@ -29,6 +35,7 @@ public class Concurso {
 		//Mensaje de inicio 
 		System.out.println("Muy bien " + jugador.getNombre() + " el concurso comienza ahora");
 		
+
 			while(true) {
 				
 				System.out.println(preguntas.preguntaSeleccionada());
@@ -49,7 +56,7 @@ public class Concurso {
 					//Responder correctamente todas las preguntas otorga la victoria del jugador, y obtiene el maximo premio acumulado de 1500
 					else if(preguntas.getRonda() == 5) {
 						jugador.setPremioAcumulado(jugador.getPremioAcumulado()+premios[preguntas.getDificultad()]);
-						System.out.println("Felicitaciones" + jugador.getNombre() + " completó todas las rondas, su premio acumulado es de "  + jugador.getPremioAcumulado() + " puntos");
+						System.out.println("Felicitaciones " + jugador.getNombre() + " completó todas las rondas, su premio acumulado es de "  + jugador.getPremioAcumulado() + " puntos");
 						break;
 					}
 				}
@@ -70,5 +77,6 @@ public class Concurso {
 			}
 				
 	}
+	
 	
 }
