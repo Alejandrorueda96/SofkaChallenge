@@ -18,6 +18,7 @@ public class Concurso {
 		System.out.println("Muy bien " + jugador.getNombre() + " el concurso comienza ahora");
 		
 		System.out.println(preguntas.preguntaSeleccionada());
+		preguntas.mostrarRespuestas();
 		
 	}
 

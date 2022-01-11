@@ -16,6 +16,38 @@ public class Preguntas {
 			{"97-42", "65-53", "93-72", "64-32", "76-52"},
 			{"97-42", "65-53", "93-72", "64-32", "76-52"}
 	};
+	//Matriz que contiene las posibles respuestas y la respuesta correcta en la ultima columna de cada fila
+	int[][] matrizRespuestas = {
+			{143, 123, 133, 137, 133},
+			{119, 129, 192, 144, 129},
+			{133, 193, 319, 143, 193},
+			{169, 199, 259, 159, 159},
+			{79, 39, 119, 59, 79},
+			
+			{35, 55, 53, 33, 55},
+			{22, 18, 32, 12, 12},
+			{12, 21, 31, 43, 21},
+			{19, 23, 32, 22, 32},
+			{24, 43, 14, 9, 24},
+			
+			{35, 55, 53, 33, 55},
+			{22, 18, 32, 12, 12},
+			{12, 21, 31, 43, 21},
+			{19, 23, 32, 22, 32},
+			{24, 43, 14, 9, 24},
+			
+			{35, 55, 53, 33, 55},
+			{22, 18, 32, 12, 12},
+			{12, 21, 31, 43, 21},
+			{19, 23, 32, 22, 32},
+			{24, 43, 14, 9, 24},
+			
+			{35, 55, 53, 33, 55},
+			{22, 18, 32, 12, 12},
+			{12, 21, 31, 43, 21},
+			{19, 23, 32, 22, 32},
+			{24, 43, 14, 9, 24}
+	};
 	//Getters y Setters
 	public int getDificultad() {
 		return dificultad;
@@ -53,4 +85,11 @@ public class Preguntas {
 		String enunciado = "Pregunta de nivel "  + Integer.toString(getRonda()) + "\nCual es el resultado de la siguiente operacion " + matrizPreguntas[getDificultad()][getIndice()];
 		return enunciado;
 	}
+	
+	public void mostrarRespuestas() {
+		for(int i = 0;i < 4;i++) {
+			System.out.println(matrizRespuestas[indice + (getDificultad()*5)][i]);
+		}
+	}
+	
 }
