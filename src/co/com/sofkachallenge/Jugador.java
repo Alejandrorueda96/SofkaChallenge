@@ -4,7 +4,7 @@ public class Jugador {
 
 	//Variables
 	private String nombre;
-	private int premioAcumulado;
+	private int premioAcumulado = 0;
 	
 	//Getters y Setters
 	public String getNombre() {
