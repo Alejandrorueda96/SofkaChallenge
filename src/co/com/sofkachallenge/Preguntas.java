@@ -14,7 +14,7 @@ public class Preguntas {
 			{"97-42", "65-53", "93-72", "64-32", "76-52"},
 			{"27*42", "73*65", "28*76", "67*58", "38*57"},
 			{"244/4", "4026/366", "354/2", "162/3", "2610/58"},
-			{"97-42", "65-53", "93-72", "64-32", "76-52"}
+			{"(-5)*7 - 9*(-4) ", "(24-89+18) - (-91+24)", "440 - [30 + 6*(19 - 12)]", "5 + [6-2-(1-8)-3 + 6] - 5", "(2 * 4 + 12) * (6 - 4)"}
 	};
 	//Matriz que contiene las posibles respuestas y la respuesta correcta en la ultima columna de cada fila
 	int[][] matrizRespuestas = {
@@ -42,11 +42,11 @@ public class Preguntas {
 			{34, 45, 51, 54, 54},
 			{45, 43, 54, 42, 45},
 			
-			{35, 55, 53, 33, 55}, //Respuestas de la primera pregunta de nivel 5
-			{22, 18, 32, 12, 12},
-			{12, 21, 31, 43, 21},
-			{19, 23, 32, 22, 32},
-			{24, 43, 14, 9, 24}
+			{2, 35, 1, 71, 1}, //Respuestas de la primera pregunta de nivel 5
+			{20, 12, 32, 23, 20 },
+			{83, 378, 368, 36, 368},
+			{19, 14, 13, 41, 14},
+			{14, 43, 20, 40, 40}
 	};
 	//Getters y Setters
 	public int getDificultad() {

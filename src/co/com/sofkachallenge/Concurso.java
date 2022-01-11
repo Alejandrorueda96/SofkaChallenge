@@ -11,7 +11,7 @@ public class Concurso {
 		Preguntas preguntas = new Preguntas();
 		
 		//Bienvenida del programa
-		System.out.print("Bienvenid@ al concurso\n");
+		System.out.print("Bienvenid@ al concurso de matemáticas\n");
 		//El jugador debe ingresar su nombre por medio de la consola 
 		System.out.print("Por favor ingrese su nombre de jugador \nNombre:");
 		jugador.setNombre(jugadorInput.nextLine()); 
